@@ -1,0 +1,19 @@
+{
+    "name": "ME.BECS.UI",
+    "rootNamespace": "",
+    "references": [
+        "ME.BECS.Features",
+        "ME.BECS",
+        "ME.BECS.ObjectReference.Runtime",
+        "Unity.Collections"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
