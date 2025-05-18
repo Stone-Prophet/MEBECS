@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ValidateScenesOnSceneLoad:
     serializedValue: 0
-    changedFromDefault: 0
+    changedFromDefault: 1
   ValidateMainProfileOnLoad:
     serializedValue: 0
     changedFromDefault: 0
   QueueAssetsOnLoad:
     serializedValue: 0
-    changedFromDefault: 0
+    changedFromDefault: 1
   QueueScenesOnLoad:
     serializedValue: 0
     changedFromDefault: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     changedFromDefault: 0
   PopulateQueueOnGameObjectDeleted:
     serializedValue: 0
-    changedFromDefault: 0
+    changedFromDefault: 1
   RunMainValidationSessionOnLoad:
     serializedValue: 0
     changedFromDefault: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     changedFromDefault: 0
   DebugMode:
     serializedValue: 0
-    changedFromDefault: 0
+    changedFromDefault: 1
   ShowWidgetOnlyWhenErrorOrWarnings:
     serializedValue: 0
     changedFromDefault: 0
