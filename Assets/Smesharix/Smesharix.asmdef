@@ -1,0 +1,32 @@
+{
+    "name": "Smesharix",
+    "rootNamespace": "",
+    "references": [
+        "ME.BECS",
+        "ME.BECS.Features",
+        "ME.BECS.Bullets",
+        "ME.BECS.Commands",
+        "ME.BECS.Destroy",
+        "ME.BECS.ComponentsViewer.Editor",
+        "ME.BECS.Effects",
+        "ME.BECS.Players",
+        "ME.BECS.SceneEntityView",
+        "ME.BECS.Transforms",
+        "ME.BECS.Trees",
+        "ME.BECS.UI",
+        "ME.BECS.Units",
+        "ME.BECS.Views",
+        "ME.BECS.Network",
+        "ME.BECS.Pathfinding",
+        "ME.BECS.FogOfWar"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
