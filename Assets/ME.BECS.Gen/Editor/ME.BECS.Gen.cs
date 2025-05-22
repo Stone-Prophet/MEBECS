@@ -342,6 +342,15 @@ namespace ME.BECS.Editor {
             BurstCompileOnDestroyNoBurst<ME.BECS.UnitsHealthBars.DrawHealthBarsSystem>.MakeMethod(null);
             BurstCompileMethod.MakeUpdate<ME.BECS.UnitsHealthBars.DrawHealthBarsSystem>(default);
             BurstCompileMethod.MakeDestroy<ME.BECS.UnitsHealthBars.DrawHealthBarsSystem>(default);
+            StaticSystemTypes<Smesharix.Systems.ExampleSystem>.Validate();
+            BurstCompileOnAwakeNoBurst<Smesharix.Systems.ExampleSystem>.MakeMethod(null);
+            BurstCompileOnStartNoBurst<Smesharix.Systems.ExampleSystem>.MakeMethod(null);
+            BurstCompileOnUpdateNoBurst<Smesharix.Systems.ExampleSystem>.MakeMethod(null);
+            BurstCompileOnDestroyNoBurst<Smesharix.Systems.ExampleSystem>.MakeMethod(null);
+            BurstCompileMethod.MakeAwake<Smesharix.Systems.ExampleSystem>(default);
+            BurstCompileMethod.MakeStart<Smesharix.Systems.ExampleSystem>(default);
+            BurstCompileMethod.MakeUpdate<Smesharix.Systems.ExampleSystem>(default);
+            BurstCompileMethod.MakeDestroy<Smesharix.Systems.ExampleSystem>(default);
             StaticTypes<ME.BECS.Attack.AttackComponent>.AOT();
             StaticTypes<ME.BECS.Attack.AttackFilterComponent>.AOT();
             StaticTypes<ME.BECS.Attack.AttackRuntimeFireComponent>.AOT();
@@ -565,6 +574,7 @@ namespace ME.BECS.Editor {
             StaticSystemTypes<ME.BECS.Units.SteeringSystem>.Validate();
             StaticSystemTypes<ME.BECS.Units.SteeringWithAvoidanceSystem>.Validate();
             StaticSystemTypes<ME.BECS.UnitsHealthBars.DrawHealthBarsSystem>.Validate();
+            StaticSystemTypes<Smesharix.Systems.ExampleSystem>.Validate();
             StaticTypes<ME.BECS.Attack.AttackComponent>.ApplyGroup(typeof(ME.BECS.Attack.AttackComponentGroup));
             StaticTypes<ME.BECS.Attack.AttackFilterComponent>.ApplyGroup(typeof(ME.BECS.Attack.AttackComponentGroup));
             StaticTypes<ME.BECS.Attack.AttackRuntimeFireComponent>.ApplyGroup(typeof(ME.BECS.Attack.AttackComponentGroup));
@@ -2705,6 +2715,16 @@ namespace ME.BECS.Editor {
                 list.Add(new ComponentDependencyGraphInfo() { type = typeof(ME.BECS.Units.UnitSelectionGroupComponent), op = 0 });
                 list.Add(new ComponentDependencyGraphInfo() { type = typeof(ME.BECS.IsInactive), op = 0 });
             }
+            {
+                // system: Smesharix.Systems.ExampleSystem
+                var list = new s::List<ComponentDependencyGraphInfo>();
+                var errors = new s::List<Systems.SystemDependenciesCodeGenerator.MethodInfoDependencies.Error>();
+                systemDependenciesComponentsGraph.Add(typeof(Smesharix.Systems.ExampleSystem), list);
+                systemDependenciesGraphErrors.Add(typeof(Smesharix.Systems.ExampleSystem), errors);
+                // |- OnAwake:
+                // |--- ReadWrite: ME.BECS.Players.PlayersSystem
+                list.Add(new ComponentDependencyGraphInfo() { type = typeof(ME.BECS.Players.PlayersSystem), op = 2 });
+            }
             // Nodes:
             systemDependenciesGraph.Add(typeof(ME.BECS.Attack.CanFireSystem),new s::HashSet<System.Type>() {
                 typeof(ME.BECS.Attack.ChangeAttackTargetFromShadowCopySystem),
@@ -3723,6 +3743,9 @@ namespace ME.BECS.Editor {
                 typeof(ME.BECS.Units.SteeringSystem),
                 typeof(ME.BECS.Units.SteeringWithAvoidanceSystem)
             });
+            systemDependenciesGraph.Add(typeof(Smesharix.Systems.ExampleSystem),new s::HashSet<System.Type>() {
+                typeof(ME.BECS.Players.PlayersSystem)
+            });
         }
         
         
@@ -3888,6 +3911,9 @@ namespace ME.BECS.Editor {
             methods.Add(ME.BECS.Players.PlayersSystem.OnSetDefeatReceived);
         }
         public static unsafe void ViewsLoad(ref ME.BECS.Views.ViewsModuleData viewsModule) {
+            ME.BECS.Views.ViewsTypeInfo.RegisterType<Malytix>(new ME.BECS.Views.ViewTypeInfo() {
+                flags = (ME.BECS.Views.TypeFlags)17,
+            });
             ME.BECS.Views.ViewsTypeInfo.RegisterType<ME.BECS.FogOfWar.FogOfWarView>(new ME.BECS.Views.ViewTypeInfo() {
                 flags = (ME.BECS.Views.TypeFlags)33,
             });

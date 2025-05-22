@@ -18,7 +18,10 @@
         "ME.BECS.Views",
         "ME.BECS.Network",
         "ME.BECS.Pathfinding",
-        "ME.BECS.FogOfWar"
+        "ME.BECS.FogOfWar",
+        "Unity.Collections",
+        "ME.BECS.Units.Editor",
+        "ME.BECS.UnitsHealthBars"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

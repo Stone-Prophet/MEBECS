@@ -14,7 +14,7 @@ namespace ME.BECS {
         public static void GraphInitialize_1001_SystemsCodeGenerator() {
             // Smesharix-FeaturesGraph
             var allocator = (AllocatorManager.AllocatorHandle)Constants.ALLOCATOR_DOMAIN;
-            graphNodes1001_SystemsCodeGenerator = CollectionHelper.CreateNativeArray<System.IntPtr>(4, allocator);
+            graphNodes1001_SystemsCodeGenerator = CollectionHelper.CreateNativeArray<System.IntPtr>(5, allocator);
             {
                 var item = allocator.Allocate(TSize<ME.BECS.DestroyWithLifetimeSystem>.sizeInt, TAlign<ME.BECS.DestroyWithLifetimeSystem>.alignInt);
                 *(ME.BECS.DestroyWithLifetimeSystem*)item = new ME.BECS.DestroyWithLifetimeSystem {
@@ -47,6 +47,19 @@ namespace ME.BECS {
                 ;
                 TSystemGraph.Register<ME.BECS.Players.PlayersSystem>(1001, item);
                 graphNodes1001_SystemsCodeGenerator[3] = (System.IntPtr)item;
+            }
+            {
+                var item = allocator.Allocate(TSize<Smesharix.Systems.ExampleSystem>.sizeInt, TAlign<Smesharix.Systems.ExampleSystem>.alignInt);
+                *(Smesharix.Systems.ExampleSystem*)item = new Smesharix.Systems.ExampleSystem {
+                    Config = new ME.BECS.Config {
+                        sourceId = 0,
+                    }
+                    ,
+                    Delay = 0f,
+                }
+                ;
+                TSystemGraph.Register<Smesharix.Systems.ExampleSystem>(1001, item);
+                graphNodes1001_SystemsCodeGenerator[4] = (System.IntPtr)item;
             }
         }
         [AOT.MonoPInvokeCallback(typeof(SystemsStatic.GetSystem))]
